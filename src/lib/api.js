@@ -142,6 +142,35 @@ export async function getNodeByURI(uri){
                       }
                     }
                   }
+                  ... on Tag {
+                    id
+                    name
+                    posts {
+                      nodes {
+                        date
+                        title
+                        excerpt
+                        uri
+                        categories {
+                          nodes {
+                            name
+                            uri
+                          }
+                        }
+                        featuredImage {
+                          node {
+                            srcSet
+                            sourceUrl
+                            altText
+                            mediaDetails {
+                              height
+                              width
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
                 }
               }
             `,
@@ -196,4 +225,3 @@ export async function getAllUris(){
   return uris;
 
 }
-
