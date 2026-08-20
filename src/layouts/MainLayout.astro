@@ -1,12 +1,10 @@
 ---
 import SiteNav from "../components/SiteNav.astro"; 
 import SiteFooter from "../components/SiteFooter.astro";
-import { navQuery } from "../lib/api";
-const { menus, generalSettings } = await navQuery();
-const primaryMenu = menus.nodes[0];
+
+const siteTitle = "Susanta's Site"; // TODO: put your real site name here
 
 const { title, description } = Astro.props;
-
 ---
 
 <html lang="en">
@@ -15,12 +13,12 @@ const { title, description } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>{`${title} | ${generalSettings.title}`}</title>
+		<title>{`${title} | ${siteTitle}`}</title>
 		<meta name="description" content={description}>
 	</head>
 	<body>
 		<main>
-			<SiteNav menu={primaryMenu} generalSettings={generalSettings}></SiteNav>
+			<SiteNav siteTitle={siteTitle}></SiteNav>
 			<hr>
 			<slot></slot>
 		</main>
