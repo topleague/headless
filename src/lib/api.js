@@ -194,12 +194,12 @@ export async function getAllUris(){
                 uri
               }
             }
-            posts(first: 100) {
+            posts(first: 10) {
               nodes {
                 uri
               }
             }
-            pages(first: 100) {
+            pages(first: 10) {
               nodes {
                 uri
               }
